@@ -112,3 +112,16 @@ const returnData = [
         occupation: 'Backend Developer',
     },
 ]
+
+// Array manipulation : map, concat, filter, sort, reduce, includes, join, push
+// String manipulation: indexOf, replace, slice
+
+const name = ['Dina', 'Dini', 'Dono', 'Dina'];
+
+const uniqueArr = new Set(name)
+
+console.log('Set', name, [...uniqueArr])
+
+console.log('includes', name.includes('Anggi')) // False
+
+console.log('Join', name.join(' '))
