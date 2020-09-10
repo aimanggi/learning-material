@@ -43,38 +43,55 @@ const products = [
   },
 ];
 
+const obj = {
+    apagitu: 'ya gitulah'
+}
+
+console.log('obj', obj.apagitu);
+
 const bags = products.filter((product) => {
-  // Return only shoes
-  // if() {
-  //     return product
-  // }
+//   Return only bags
+  if(!product.type === 'bag') {
+      return product
+  }
 });
 
 console.log('bags', bags);
 
 const bagJacket = products.filter((product) => {
   // Return bag and jacket
-  // if() {
-  //     return product
-  // }
+  if(product.type === 'bag' || product.type === 'jacket') {
+      return product
+  }
 });
 
 console.log('bag and jacket', bagJacket);
 
+// {
+//     type: "jacket",
+//     color: "white",
+//     size: ["S", "M"],
+//     brand: "Chanel",
+//   },
+
 const redShoes = products.filter((product) => {
   // Return shoes with color red
-  // if() {
-  //     return product
-  // }
+  if(product.color === 'red' && product.type === 'shoes') {
+      return product
+  }
 });
 
 console.log('red shoes', redShoes);
 
 const shoesSize40 = products.filter((product) => {
   // Return shoes with size 40
-  // if() {
-  //     return product
-  // }
+  if(product.size) {
+    for (let i = 0; i < product.size.length; i++) {
+        if(product.size[i] === 40 &&  product.type === 'shoes' ) {
+            return product
+        }
+      }
+  }
 });
 
 console.log('shoes size 40', shoesSize40);

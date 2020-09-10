@@ -1,19 +1,25 @@
 console.log("hallo");
 
-let data = [];
-
 fetch("https://jsonplaceholder.typicode.com/posts")
   .then((response) => response.json())
   .then((data) => {
     console.log("data todos", data);
-    document.getElementById("todos").innerHTML = `${data
-      .map((todo) => `
-        <div>${todo.id}</div>
-        <h3>${todo.title}</h3>
-        <div>${todo.body}</div>
-       <br/>
-      `)
-      .join(" ")}`;
+    // document.getElementById("todos").innerHTML = `${data
+    //   .map((todo) => `
+    //     <div>${todo.id}</div>
+    //     <h3>${todo.title}</h3>
+    //     <div>${todo.body}</div>
+    //    <br/>
+    //   `)
+    //   .join(" ")}`;
+    for(let i = 0; i < 6; i++) {
+      document.getElementById("todos").innerHTML += `
+      <li>
+      <h1>${data[i].title}</h1>
+      <p>${data[i].body}</p>
+      </li>
+    `
+    }
   });
 
 const promiseA = (data) =>
