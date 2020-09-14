@@ -85,10 +85,6 @@ const arr = [1, 2, 3];
 const [a, b] = arr;
 console.log(a);
 
-// for in / for of ???
-// for in untuk object
-// for of untuk array (looping)
-
 // Optional chaining
 const flower1 = {
   color: "yellow",
@@ -142,3 +138,58 @@ const data2 = {
 }
 
 console.log('data', data2)
+
+// for in
+
+const objectForin = { a: 1, b: 2, c: 3 };
+
+for (const property in objectForin) {
+  console.log(`${property}: ${objectForin[property]}`);
+}
+
+
+// for of
+const arrayForOf = ['a', 'b', 'c'];
+
+for (const element of arrayForOf) {
+  console.log(element); 
+}
+
+
+// Set
+// create unique array
+let colors = new Set(['Green', 'Red', 'Orange', 'Yellow', 'Red']);  
+console.log(colors);  
+
+const colorsArrayOfObject = [
+  {
+    name: 'Red',
+    type: 'primary'
+  },
+  {
+    name: 'Yellow',
+    type: 'primary'
+  },
+  {
+    name: 'Green',
+    type: 'secondary'
+  },
+  {
+    name: 'Violet',
+    type: 'secondary'
+  },
+  {
+    name: 'Black',
+    type: 'neutral'
+  }
+]
+
+// expected return: ['secondary', 'primary' ,'neutral']
+
+
+// Rest parameters
+const sum = (...theArgs)  => {
+  return theArgs.reduce((previous, current) => {
+    return previous + current;
+  });
+}
